@@ -1,0 +1,15 @@
+{
+    "name": "bahman026/laravelResource",
+    "authors": [
+        {
+            "name": "bahman",
+            "email": "bahman026@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "bahman026\\LaravelResource\\": "src/"
+        }
+    }
+}
