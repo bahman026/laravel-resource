@@ -17,15 +17,10 @@ class BResource
     {
 
         try {
-
             $resource = Resource::collection($model);
-
         } catch (\BadMethodCallException $badMethodCallException) {
-
             $resource = new Resource($model);
-
         }
-
         if ($dataName == null)
             return $resource->toArray($columns);
         else
