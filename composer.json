@@ -9,7 +9,14 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "bahman026\\LaravelResource\\": "src/"
+            "bahman026\\laravelResource\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "bahman026\\laravelResource\\laravelResourceServiceProvider"
+            ]
         }
     }
 }
