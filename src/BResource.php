@@ -3,28 +3,22 @@
 namespace bahman026\laravelResource;
 
 
-use Illuminate\Container\Container;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\File;
-use Illuminate\Http\Resources\Json\JsonResource;
 
 
 class BResource
 {
 
-    static function resource($model, $columns, $dataName = null)
+    static function resource($model, $columns, $dataName = null,$query=null)
     {
-
         try {
             $resource = Resource::collection($model);
         } catch (\BadMethodCallException $badMethodCallException) {
             $resource = new Resource($model);
         }
         if ($dataName == null)
-            return $resource->toArray($columns);
+            return $resource->toArray(['request'=>$columns,'query'=>$query]);
         else
-            return [$dataName => $resource->toArray($columns)];
+            return [$dataName => $resource->toArray(['request'=>$columns,'query'=>$query])];
 
     }
 }
